@@ -1,1 +1,6 @@
-com/mycompany/proyectofinalprogramacion/Conexion.class
+Entitys/Participacion.class
+com/mycompany/proyectofinalprogramacion/Main.class
+Entitys/Arbitro.class
+Entitys/Pueblo.class
+Entitys/Partido.class
+Entitys/Jugador.class
