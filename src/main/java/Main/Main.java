@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-package com.mycompany.proyectofinalprogramacion;
+package Main;
 
 import Entitys.Jugador;
 import jakarta.persistence.EntityManager;
