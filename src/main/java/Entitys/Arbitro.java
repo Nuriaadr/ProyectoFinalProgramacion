@@ -18,6 +18,7 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "Arbitros")
 public class Arbitro {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -27,8 +28,8 @@ public class Arbitro {
     @OneToOne(mappedBy = "arbitro")
     private Partido partido;
 
-    public Arbitro(int id, String nombre, Partido partido) {
-        this.id = id;
+    public Arbitro(String nombre, Partido partido) {
+
         this.nombre = nombre;
         this.partido = partido;
     }
@@ -36,7 +37,6 @@ public class Arbitro {
     public Arbitro() {
     }
 
-    
     public int getId() {
         return id;
     }
@@ -60,6 +60,10 @@ public class Arbitro {
     public void setPartido(Partido partido) {
         this.partido = partido;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return "Arbitro{" + "id=" + id + ", nombre=" + nombre + ", partido=" + partido + '}';
+    }
+
 }

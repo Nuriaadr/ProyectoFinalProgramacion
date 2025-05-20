@@ -124,7 +124,7 @@ public class Panel extends javax.swing.JPanel {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BotonArbitros)
-                .addGap(25, 25, 25)
+                .addGap(18, 18, 18)
                 .addComponent(BotonJugadores)
                 .addGap(18, 18, 18)
                 .addComponent(BotonParticipaciones)
@@ -132,7 +132,7 @@ public class Panel extends javax.swing.JPanel {
                 .addComponent(BotonParti)
                 .addGap(18, 18, 18)
                 .addComponent(BotonPueblos)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addComponent(BotonSalir)
                 .addContainerGap())
         );
@@ -144,7 +144,8 @@ public class Panel extends javax.swing.JPanel {
     }//GEN-LAST:event_BotonSalirActionPerformed
 
     private void BotonPueblosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonPueblosActionPerformed
-        // TODO add your handling code here:
+   Interfaz.Pueblos.PuebloGUI p = new Interfaz.Pueblos.PuebloGUI();
+        p.setVisible(true);
     }//GEN-LAST:event_BotonPueblosActionPerformed
 
     private void BotonPartiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonPartiActionPerformed
@@ -157,10 +158,14 @@ public class Panel extends javax.swing.JPanel {
 
     private void BotonJugadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonJugadoresActionPerformed
         // TODO add your handling code here:
+        Interfaz.Jugadores.JugadorGUI jg = new Interfaz.Jugadores.JugadorGUI();
+        jg.setVisible(true);
     }//GEN-LAST:event_BotonJugadoresActionPerformed
 
     private void BotonArbitrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonArbitrosActionPerformed
         // TODO add your handling code here:
+        Interfaz.Arbitros.ArbitroGUI arb = new Interfaz.Arbitros.ArbitroGUI();
+        arb.setVisible(true);
     }//GEN-LAST:event_BotonArbitrosActionPerformed
 
 

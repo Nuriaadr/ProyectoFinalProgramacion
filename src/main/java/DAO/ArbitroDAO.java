@@ -53,7 +53,7 @@ public class ArbitroDAO {
 
     public List<Arbitro> listarTodos() {
         EntityManager em = emf.createEntityManager();
-        List<Arbitro> lista = em.createQuery("SELECT a FROM Arbitros a", Arbitro.class).getResultList();
+        List<Arbitro> lista = em.createQuery("SELECT a FROM Arbitro a", Arbitro.class).getResultList();
         em.close();
         return lista;
     }

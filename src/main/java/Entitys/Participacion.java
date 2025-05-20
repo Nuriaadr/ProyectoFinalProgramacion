@@ -19,6 +19,7 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "Participaciones")
 public class Participacion {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -33,8 +34,7 @@ public class Participacion {
 
     private int goles;
 
-    public Participacion(int id, Jugador jugador, Partido partido, int goles) {
-        this.id = id;
+    public Participacion(Jugador jugador, Partido partido, int goles) {
         this.jugador = jugador;
         this.partido = partido;
         this.goles = goles;
@@ -73,6 +73,11 @@ public class Participacion {
 
     public void setGoles(int goles) {
         this.goles = goles;
+    }
+
+    @Override
+    public String toString() {
+        return "Participacion{" + "id=" + id + ", jugador=" + jugador + ", partido=" + partido + ", goles=" + goles + '}';
     }
 
 }

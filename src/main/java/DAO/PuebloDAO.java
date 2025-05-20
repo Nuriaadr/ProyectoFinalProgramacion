@@ -53,7 +53,7 @@ public class PuebloDAO {
 
     public List<Pueblo> listarTodos() {
         EntityManager em = emf.createEntityManager();
-        List<Pueblo> lista = em.createQuery("SELECT p FROM Pueblos p", Pueblo.class).getResultList();
+        List<Pueblo> lista = em.createQuery("SELECT p FROM Pueblo p", Pueblo.class).getResultList();
         em.close();
         return lista;
     }

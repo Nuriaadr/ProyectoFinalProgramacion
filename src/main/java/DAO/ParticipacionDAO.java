@@ -53,7 +53,7 @@ public class ParticipacionDAO {
 
     public List<Participacion> listarTodos() {
         EntityManager em = emf.createEntityManager();
-        List<Participacion> lista = em.createQuery("SELECT p FROM Participaciones p", Participacion.class).getResultList();
+        List<Participacion> lista = em.createQuery("SELECT p FROM Participacion p", Participacion.class).getResultList();
         em.close();
         return lista;
     }

@@ -25,8 +25,8 @@ public class Pueblo {
     @OneToMany(mappedBy = "pueblo")
     private List<Jugador> jugadores;
 
-    public Pueblo(int id, String nombre, String localizacion, List<Jugador> jugadores) {
-        this.id = id;
+    public Pueblo( String nombre, String localizacion, List<Jugador> jugadores) {
+       
         this.nombre = nombre;
         this.localizacion = localizacion;
         this.jugadores = jugadores;
@@ -65,6 +65,11 @@ public class Pueblo {
 
     public void setJugadores(List<Jugador> jugadores) {
         this.jugadores = jugadores;
+    }
+
+    @Override
+    public String toString() {
+        return "Pueblo{" + "id=" + id + ", nombre=" + nombre + ", localizacion=" + localizacion + ", jugadores=" + jugadores + '}';
     }
     
     

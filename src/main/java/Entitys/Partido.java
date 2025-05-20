@@ -12,6 +12,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -37,12 +38,12 @@ public class Partido {
     @OneToMany(mappedBy = "partido")
     private List<Participacion> participaciones;
 
-    public Partido(int id, Date fecha, String lugar, Arbitro arbitro, List<Participacion> participaciones) {
-        this.id = id;
+    public Partido(Date fecha, String lugar, Arbitro arbitro, List<Participacion> participaciones) {
+
         this.fecha = fecha;
         this.lugar = lugar;
         this.arbitro = arbitro;
-        this.participaciones = participaciones;
+        this.participaciones = new ArrayList();
     }
 
     public Partido() {
@@ -87,6 +88,10 @@ public class Partido {
     public void setParticipaciones(List<Participacion> participaciones) {
         this.participaciones = participaciones;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return "Partido{" + "id=" + id + ", fecha=" + fecha + ", lugar=" + lugar + ", arbitro=" + arbitro + ", participaciones=" + participaciones + '}';
+    }
+
 }

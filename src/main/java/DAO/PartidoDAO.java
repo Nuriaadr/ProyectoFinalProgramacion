@@ -53,7 +53,7 @@ public class PartidoDAO {
 
     public List<Partido> listarTodos() {
         EntityManager em = emf.createEntityManager();
-        List<Partido> lista = em.createQuery("SELECT p FROM Partidos p", Partido.class).getResultList();
+        List<Partido> lista = em.createQuery("SELECT p FROM Partido p", Partido.class).getResultList();
         em.close();
         return lista;
     }

@@ -3,8 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Entitys;
+
 import jakarta.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
+
 /**
  *
  * @author nuria
@@ -12,6 +15,7 @@ import java.util.List;
 @Entity
 @Table(name = "Jugadores")
 public class Jugador {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -26,12 +30,12 @@ public class Jugador {
     @OneToMany(mappedBy = "jugador")
     private List<Participacion> participaciones;
 
-    public Jugador(int id, String nombre, int edad, Pueblo pueblo, List<Participacion> participaciones) {
-        this.id = id;
+    public Jugador(String nombre, int edad, Pueblo pueblo, List<Participacion> participaciones) {
+
         this.nombre = nombre;
         this.edad = edad;
         this.pueblo = pueblo;
-        this.participaciones = participaciones;
+        this.participaciones = new ArrayList<>();
     }
 
     public Jugador() {
@@ -76,6 +80,12 @@ public class Jugador {
     public void setParticipaciones(List<Participacion> participaciones) {
         this.participaciones = participaciones;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return "Jugador{" + "id=" + id + ", nombre=" + nombre + ", edad=" + edad + ", pueblo=" + pueblo + ", participaciones=" + participaciones + '}';
+    }
+
+ 
+
 }

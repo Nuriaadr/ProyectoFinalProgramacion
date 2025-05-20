@@ -53,7 +53,7 @@ public class JugadorDAO {
 
     public List<Jugador> listarTodos() {
         EntityManager em = emf.createEntityManager();
-        List<Jugador> lista = em.createQuery("SELECT j FROM Jugadores j", Jugador.class).getResultList();
+        List<Jugador> lista = em.createQuery("SELECT j FROM Jugador j", Jugador.class).getResultList();
         em.close();
         return lista;
     }
