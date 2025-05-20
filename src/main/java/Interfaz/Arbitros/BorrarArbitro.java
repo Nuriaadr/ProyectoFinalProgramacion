@@ -109,17 +109,19 @@ public class BorrarArbitro extends javax.swing.JDialog {
                 int id = Integer.parseInt(idTexto);
 
                 ArbitroDAO arbitroDAO = new ArbitroDAO();
-                arbitroDAO.eliminar(id);
+                int confirm = JOptionPane.showConfirmDialog(this, "¿Estás seguro de que quieres borrar al árbitro con ID " + id + "?", "Confirmar borrado", JOptionPane.YES_NO_OPTION);
+                if (confirm == JOptionPane.YES_OPTION) {
+                    arbitroDAO.eliminar(id);
+                    JOptionPane.showMessageDialog(this, "Árbitro borrado correctamente.");
+                    dispose();
+                }
 
-                JOptionPane.showMessageDialog(null, "Árbitro borrado correctamente.");
-                dispose(); // Cierra la ventana tras borrar
             } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(null, "Debe introducir un número entero válido como ID.");
             }
         } else {
             JOptionPane.showMessageDialog(null, "Por favor, introduzca un ID.");
         }
-
     }//GEN-LAST:event_BorrarActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

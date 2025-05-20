@@ -1,13 +1,14 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
-
 package Main;
 
 import Entitys.Jugador;
+import Interfaz.Panel;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
+import javax.swing.JFrame;
 
 /**
  *
@@ -16,28 +17,15 @@ import jakarta.persistence.Persistence;
 public class Main {
 
     public static void main(String[] args) {
-        // Crea el EntityManagerFactory con el nombre del persistence-unit
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProyectoFinalProgramacion");
+        JFrame frame = new JFrame("Mi aplicación");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(500, 500);  
+        frame.setLocationRelativeTo(null); 
 
-        // Crea el EntityManager
-        EntityManager em = emf.createEntityManager();
+        Panel panel = new Panel(); 
+        frame.add(panel);          
 
-        // Abre transacción
-        em.getTransaction().begin();
-
-        // Crea un nuevo jugador (ejemplo)
-        Jugador j = new Jugador();
-        j.setNombre("Carlos");
-
-        // Guarda en la base de datos
-        em.persist(j);
-
-        // Confirma la transacción
-        em.getTransaction().commit();
-
-        // Cierra
-        em.close();
-        emf.close();
+        frame.setVisible(true);    
     }
-    
-    }
+
+}
