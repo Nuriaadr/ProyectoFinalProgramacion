@@ -118,25 +118,25 @@ public class PanelPueblo extends javax.swing.JFrame {
     private void editarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarActionPerformed
         // TODO add your handling code here:
         
-        EditarArb editar = new EditarArb(this, rootPaneCheckingEnabled);
+        EditarPueblo editar = new EditarPueblo(this, rootPaneCheckingEnabled);
         editar.setVisible(true);
     }//GEN-LAST:event_editarActionPerformed
 
     private void crearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearActionPerformed
         // TODO add your handling code here:
-        CrearArbitro crear = new CrearArbitro(this, rootPaneCheckingEnabled);
+        CrearPueblo crear = new CrearPueblo(this, rootPaneCheckingEnabled);
         crear.setVisible(true);
     }//GEN-LAST:event_crearActionPerformed
 
     private void borrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrarActionPerformed
         // TODO add your handling code here:
-        BorrarArbitro borrar = new BorrarArbitro(this, rootPaneCheckingEnabled);
+        BorrarPueblos borrar = new BorrarPueblos(this, rootPaneCheckingEnabled);
         borrar.setVisible(true);
     }//GEN-LAST:event_borrarActionPerformed
 
     private void listActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listActionPerformed
         // TODO add your handling code here:
-        ListarArbitros listar = new ListarArbitros(this, rootPaneCheckingEnabled);
+        ListarPueblos listar = new ListarPueblos(this, rootPaneCheckingEnabled);
         listar.setVisible(true);
     }//GEN-LAST:event_listActionPerformed
 

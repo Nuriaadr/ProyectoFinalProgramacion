@@ -5,7 +5,6 @@
 package Entitys;
 
 import jakarta.persistence.*;
-import java.util.List;
 
 /**
  *
@@ -21,9 +20,6 @@ public class Pueblo {
 
     private String nombre;
     private String localizacion;
-
-    @OneToMany(mappedBy = "pueblo")
-    private List<Jugador> jugadores;
 
     public Pueblo( String nombre, String localizacion) {
        
@@ -59,17 +55,9 @@ public class Pueblo {
         this.localizacion = localizacion;
     }
 
-    public List<Jugador> getJugadores() {
-        return jugadores;
-    }
-
-    public void setJugadores(List<Jugador> jugadores) {
-        this.jugadores = jugadores;
-    }
-
     @Override
     public String toString() {
-        return "Pueblo{" + "id=" + id + ", nombre=" + nombre + ", localizacion=" + localizacion + ", jugadores=" + jugadores + '}';
+        return "Pueblo{" + "id=" + id + ", nombre=" + nombre + ", localizacion=" + localizacion + '}';
     }
     
     
