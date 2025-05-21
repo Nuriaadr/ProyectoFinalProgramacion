@@ -63,7 +63,7 @@ public class Arbitro {
 
     @Override
     public String toString() {
-        return "Arbitro{" + "id=" + id + ", nombre=" + nombre + ", partido=" + partido + '}';
+        return "id=" + id + ", nombre=" + nombre + '}';
     }
 
 }

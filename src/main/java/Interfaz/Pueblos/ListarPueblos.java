@@ -2,8 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
-package Interfaz.Arbitros;
+package Interfaz.Pueblos;
 
+import Interfaz.Arbitros.*;
 import DAO.ArbitroDAO;
 import Entitys.Arbitro;
 import java.util.List;
@@ -13,14 +14,14 @@ import javax.swing.DefaultListModel;
  *
  * @author nuria
  */
-public class ListarArbitros extends javax.swing.JDialog {
+public class ListarPueblos extends javax.swing.JDialog {
 
     /**
      * Creates new form ListarArbitros
      * @param parent
      * @param modal
      */
-    public ListarArbitros(java.awt.Frame parent, boolean modal) {
+    public ListarPueblos(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         cargarArbitros();
