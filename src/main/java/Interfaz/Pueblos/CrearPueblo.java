@@ -35,17 +35,19 @@ public class CrearPueblo extends javax.swing.JDialog {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        nombreCrear = new javax.swing.JTextField();
+        localidadCrear = new javax.swing.JTextField();
         CrearArbitro = new javax.swing.JButton();
         Salir = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        nombreCrear = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jLabel1.setText("Nombre del arbitro a crear: ");
+        jLabel1.setText("Nombre del pueblo a crear: ");
 
-        nombreCrear.addActionListener(new java.awt.event.ActionListener() {
+        localidadCrear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nombreCrearActionPerformed(evt);
+                localidadCrearActionPerformed(evt);
             }
         });
 
@@ -63,6 +65,14 @@ public class CrearPueblo extends javax.swing.JDialog {
             }
         });
 
+        jLabel2.setText("Localidad del pueblo a crear: ");
+
+        nombreCrear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nombreCrearActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -71,58 +81,78 @@ public class CrearPueblo extends javax.swing.JDialog {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(nombreCrear))
-                        .addGap(0, 170, Short.MAX_VALUE))
+                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(181, 181, 181))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(CrearArbitro)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Salir)))
-                .addContainerGap())
+                        .addComponent(localidadCrear)
+                        .addGap(105, 105, 105))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(CrearArbitro)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Salir))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1)
+                                    .addComponent(nombreCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(10, 10, 10)
                 .addComponent(nombreCrear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addComponent(localidadCrear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(64, 64, 64))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CrearArbitro)
-                    .addComponent(Salir))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(Salir)
+                    .addComponent(CrearArbitro))
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void nombreCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreCrearActionPerformed
+    private void localidadCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_localidadCrearActionPerformed
         // TODO add your handling code here:
 
 
-    }//GEN-LAST:event_nombreCrearActionPerformed
+    }//GEN-LAST:event_localidadCrearActionPerformed
 
     private void CrearArbitroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearArbitroActionPerformed
         // TODO add your handling code here:
         String nombre = nombreCrear.getText().trim();
-        if (!nombre.isEmpty()) {
+        String localidad = localidadCrear.getText().trim();
+        if (!nombre.isEmpty() && !localidad.isEmpty()) {
             PuebloDAO puebloDAO = new PuebloDAO();
             Pueblo nuevoPueblo = new Pueblo();
             nuevoPueblo.setNombre(nombre);
-
+            nuevoPueblo.setLocalizacion(localidad);
+            
             puebloDAO.crear(nuevoPueblo);
             JOptionPane.showMessageDialog(null, "Pueblo creado correctamente.");
             dispose(); //Cierra la ventana
         } else {
-            JOptionPane.showMessageDialog(null, "El nombre no puede estar vacío.");
+            JOptionPane.showMessageDialog(null, "El nombre o la localidad no pueden estar vacíos.");
         }
     }//GEN-LAST:event_CrearArbitroActionPerformed
 
     private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
         System.exit(0);        // TODO add your handling code here:
     }//GEN-LAST:event_SalirActionPerformed
+
+    private void nombreCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreCrearActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nombreCrearActionPerformed
 
     /**
      * @param args the command line arguments
@@ -132,6 +162,8 @@ public class CrearPueblo extends javax.swing.JDialog {
     private javax.swing.JButton CrearArbitro;
     private javax.swing.JButton Salir;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JTextField localidadCrear;
     private javax.swing.JTextField nombreCrear;
     // End of variables declaration//GEN-END:variables
 }

@@ -4,9 +4,9 @@
  */
 package Interfaz.Pueblos;
 
-import Interfaz.Arbitros.*;
-import DAO.ArbitroDAO;
+import DAO.PuebloDAO;
 import Entitys.Arbitro;
+import Entitys.Pueblo;
 import java.util.List;
 import javax.swing.DefaultListModel;
 
@@ -24,7 +24,7 @@ public class ListarPueblos extends javax.swing.JDialog {
     public ListarPueblos(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        cargarArbitros();
+        cargarPueblos();
     }
 
     /**
@@ -88,12 +88,12 @@ public class ListarPueblos extends javax.swing.JDialog {
    dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void cargarArbitros() {
-        DefaultListModel<Arbitro> modelo = new DefaultListModel<>();
-        ArbitroDAO dao = new ArbitroDAO();
-        List<Arbitro> lista = dao.listarTodos();
+    private void cargarPueblos() {
+        DefaultListModel<Pueblo> modelo = new DefaultListModel<>();
+        PuebloDAO dao = new PuebloDAO();
+        List<Pueblo> lista = dao.listarTodos();
 
-        for (Arbitro a : lista) {
+        for (Pueblo a : lista) {
             modelo.addElement(a);
         }
 
@@ -103,7 +103,7 @@ public class ListarPueblos extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JList<Arbitro> jList1;
+    private javax.swing.JList<Pueblo> jList1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

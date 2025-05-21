@@ -25,11 +25,11 @@ public class Pueblo {
     @OneToMany(mappedBy = "pueblo")
     private List<Jugador> jugadores;
 
-    public Pueblo( String nombre, String localizacion, List<Jugador> jugadores) {
+    public Pueblo( String nombre, String localizacion) {
        
         this.nombre = nombre;
         this.localizacion = localizacion;
-        this.jugadores = jugadores;
+        
     }
 
     public Pueblo() {
