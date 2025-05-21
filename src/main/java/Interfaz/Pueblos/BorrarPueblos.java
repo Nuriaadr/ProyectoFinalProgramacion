@@ -4,10 +4,7 @@
  */
 package Interfaz.Pueblos;
 
-import Interfaz.Arbitros.*;
-import DAO.ArbitroDAO;
 import DAO.PuebloDAO;
-import Entitys.Arbitro;
 import javax.swing.JOptionPane;
 
 /**

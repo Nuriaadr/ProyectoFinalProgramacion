@@ -55,7 +55,7 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Lista de &#xe1;rbitros:"/>
+        <Property name="text" type="java.lang.String" value="Lista de pueblos:"/>
       </Properties>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">

@@ -146,7 +146,7 @@ public class Panel extends javax.swing.JPanel {
     }//GEN-LAST:event_BotonSalirActionPerformed
 
     private void BotonPueblosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonPueblosActionPerformed
-        Interfaz.Pueblos.PuebloGUI p = new Interfaz.Pueblos.PuebloGUI();
+        Interfaz.Pueblos.PanelPueblo p = new Interfaz.Pueblos.PanelPueblo();
         p.setVisible(true);
     }//GEN-LAST:event_BotonPueblosActionPerformed
 

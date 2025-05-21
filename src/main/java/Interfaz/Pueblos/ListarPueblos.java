@@ -43,7 +43,7 @@ public class ListarPueblos extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jLabel1.setText("Lista de árbitros:");
+        jLabel1.setText("Lista de pueblos:");
 
         jScrollPane1.setViewportView(jList1);
 
