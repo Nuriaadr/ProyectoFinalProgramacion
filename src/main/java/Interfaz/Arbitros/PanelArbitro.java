@@ -34,6 +34,7 @@ public class PanelArbitro extends javax.swing.JFrame {
         salir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(153, 153, 255));
 
         jLabel1.setText("¿Qué desea hacer?");
 
@@ -65,6 +66,7 @@ public class PanelArbitro extends javax.swing.JFrame {
             }
         });
 
+        salir.setBackground(new java.awt.Color(255, 0, 0));
         salir.setText("Salir");
         salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -140,7 +142,7 @@ public class PanelArbitro extends javax.swing.JFrame {
 
     private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
         // TODO add your handling code here:
-        System.exit(0);
+        dispose(); 
     }//GEN-LAST:event_salirActionPerformed
 
     /**

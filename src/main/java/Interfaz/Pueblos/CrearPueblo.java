@@ -58,6 +58,7 @@ public class CrearPueblo extends javax.swing.JDialog {
             }
         });
 
+        Salir.setBackground(new java.awt.Color(255, 0, 0));
         Salir.setText("Salir");
         Salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -147,8 +148,7 @@ public class CrearPueblo extends javax.swing.JDialog {
     }//GEN-LAST:event_CrearArbitroActionPerformed
 
     private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
-        System.exit(0);        // TODO add your handling code here:
-    }//GEN-LAST:event_SalirActionPerformed
+dispose();     }//GEN-LAST:event_SalirActionPerformed
 
     private void nombreCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreCrearActionPerformed
         // TODO add your handling code here:

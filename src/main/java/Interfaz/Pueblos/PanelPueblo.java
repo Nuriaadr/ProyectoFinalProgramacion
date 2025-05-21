@@ -67,6 +67,7 @@ public class PanelPueblo extends javax.swing.JFrame {
             }
         });
 
+        salir.setBackground(new java.awt.Color(255, 0, 0));
         salir.setText("Salir");
         salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -142,7 +143,7 @@ public class PanelPueblo extends javax.swing.JFrame {
 
     private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
         // TODO add your handling code here:
-        System.exit(0);
+        dispose(); 
     }//GEN-LAST:event_salirActionPerformed
 
     /**

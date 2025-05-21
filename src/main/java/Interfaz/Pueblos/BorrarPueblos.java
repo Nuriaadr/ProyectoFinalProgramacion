@@ -37,7 +37,7 @@ public class BorrarPueblos extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jLabel1.setText("Introduzca el id del publo  a  borrar:");
+        jLabel1.setText("Introduzca el id del pueblo a borrar:");
 
         nombreBorrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -52,6 +52,7 @@ public class BorrarPueblos extends javax.swing.JDialog {
             }
         });
 
+        jButton2.setBackground(new java.awt.Color(255, 0, 0));
         jButton2.setText("Salir");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -124,8 +125,7 @@ public class BorrarPueblos extends javax.swing.JDialog {
     }//GEN-LAST:event_BorrarActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        System.exit(0);        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+dispose();     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
