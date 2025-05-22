@@ -24,7 +24,7 @@ public class Participacion {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @ManyToOne
+    @ManyToOne 
     @JoinColumn(name = "id_jugador")
     private Jugador jugador;
 

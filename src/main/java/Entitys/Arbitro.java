@@ -15,17 +15,20 @@ import jakarta.persistence.Table;
  *
  * @author nuria
  */
-@Entity
-@Table(name = "Arbitros")
+@Entity //Marca la clase como una entidad JPA, es decir, 
+//que se va a mapear a una tabla de la base de datos
+@Table(name = "Arbitros") //Define el nombre de la tabla en la badat que representa
+//esta entidad, si no la usaramos se tomaría el nombre de la clase
 public class Arbitro {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id //marca el campo id como clave primaria             
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //indica que el campo id
+    //va a ser generado automatico por la tabla (autoincrement)
     private int id;
 
     private String nombre;
 
-    @OneToOne(mappedBy = "arbitro")
+    @OneToOne(mappedBy = "arbitro") //define una relacion uno a uno con la entidad partido
     private Partido partido;
 
     public Arbitro(String nombre, Partido partido) {

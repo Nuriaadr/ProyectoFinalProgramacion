@@ -23,7 +23,7 @@ public class Jugador {
     private String nombre;
     private int edad;
 
-    @ManyToOne
+    @ManyToOne //Los pueblos tienen muchos jugadores
     @JoinColumn(name = "id_pueblo")
     private Pueblo pueblo;
 
