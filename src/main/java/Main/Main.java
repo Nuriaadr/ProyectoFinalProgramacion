@@ -3,11 +3,7 @@
  */
 package Main;
 
-import Entitys.Jugador;
 import Interfaz.Panel;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.Persistence;
 import javax.swing.JFrame;
 
 /**

@@ -160,7 +160,7 @@ public class Panel extends javax.swing.JPanel {
 
     private void BotonJugadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonJugadoresActionPerformed
         // TODO add your handling code here:
-        Interfaz.Jugadores.JugadorGUI jg = new Interfaz.Jugadores.JugadorGUI();
+        Interfaz.Jugadores.PanelJugador jg = new Interfaz.Jugadores.PanelJugador();
         jg.setVisible(true);
     }//GEN-LAST:event_BotonJugadoresActionPerformed
 

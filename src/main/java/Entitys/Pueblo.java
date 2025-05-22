@@ -57,8 +57,7 @@ public class Pueblo {
 
     @Override
     public String toString() {
-        return "Pueblo{" + "id=" + id + ", nombre=" + nombre + ", localizacion=" + localizacion + '}';
+        return nombre + ", " + localizacion;
+    
     }
-    
-    
 }
