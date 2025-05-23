@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package Interfaz;
+package Views;
 
-import Interfaz.Arbitros.PanelArbitro;
+import Views.Arbitros.PanelArbitro;
 
 /**
  *
@@ -146,7 +146,7 @@ public class Panel extends javax.swing.JPanel {
     }//GEN-LAST:event_BotonSalirActionPerformed
 
     private void BotonPueblosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonPueblosActionPerformed
-        Interfaz.Pueblos.PanelPueblo p = new Interfaz.Pueblos.PanelPueblo();
+        Views.Pueblos.PanelPueblo p = new Views.Pueblos.PanelPueblo();
         p.setVisible(true);
     }//GEN-LAST:event_BotonPueblosActionPerformed
 
@@ -160,13 +160,13 @@ public class Panel extends javax.swing.JPanel {
 
     private void BotonJugadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonJugadoresActionPerformed
         // TODO add your handling code here:
-        Interfaz.Jugadores.PanelJugador jg = new Interfaz.Jugadores.PanelJugador();
+        Views.Jugadores.PanelJugador jg = new Views.Jugadores.PanelJugador();
         jg.setVisible(true);
     }//GEN-LAST:event_BotonJugadoresActionPerformed
 
     private void BotonArbitrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonArbitrosActionPerformed
         // TODO add your handling code here:
-       Interfaz.Arbitros.PanelArbitro panelArb = new PanelArbitro();
+        Views.Arbitros.PanelArbitro panelArb = new PanelArbitro();
        panelArb.setVisible(true);
     }//GEN-LAST:event_BotonArbitrosActionPerformed
 

@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Interfaz.Partidos;
+package Views.Partidos;
 
-import DAO.PartidoDAO;
+import Controladores.PartidoDAO;
 import Entitys.Arbitro;
 import Entitys.Partido;
 import java.awt.BorderLayout;

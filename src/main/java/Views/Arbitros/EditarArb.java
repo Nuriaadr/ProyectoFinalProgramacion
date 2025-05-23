@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
-package Interfaz.Arbitros;
+package Views.Arbitros;
 
-import DAO.ArbitroDAO;
+import Controladores.ArbitroDAO;
 import Entitys.Arbitro;
 import javax.swing.JOptionPane;
 

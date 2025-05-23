@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package DAO;
+package Controladores;
 
-import Entitys.Jugador;
+import Entitys.Pueblo;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
@@ -14,46 +14,46 @@ import java.util.List;
  *
  * @author nuria
  */
-public class JugadorDAO {
-     private final EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProyectoFinalProgramacion");
+public class PuebloDAO {
+    private final EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProyectoFinalProgramacion");
 
-    public void crear(Jugador jugador) {
+    public void crear(Pueblo pueblo) {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
-        em.persist(jugador);
+        em.persist(pueblo);
         em.getTransaction().commit();
         em.close();
     }
 
-    public Jugador leer(int id) {
+    public Pueblo leer(int id) {
         EntityManager em = emf.createEntityManager();
-        Jugador jugador = em.find(Jugador.class, id);
+        Pueblo pueblo = em.find(Pueblo.class, id);
         em.close();
-        return jugador;
+        return pueblo;
     }
 
-    public void actualizar(Jugador jugador) {
+    public void actualizar(Pueblo pueblo) {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
-        em.merge(jugador);
+        em.merge(pueblo);
         em.getTransaction().commit();
         em.close();
     }
 
     public void eliminar(int id) {
         EntityManager em = emf.createEntityManager();
-        Jugador jugador = em.find(Jugador.class, id);
-        if (jugador != null) {
+        Pueblo pueblo = em.find(Pueblo.class, id);
+        if (pueblo != null) {
             em.getTransaction().begin();
-            em.remove(jugador);
+            em.remove(pueblo);
             em.getTransaction().commit();
         }
         em.close();
     }
 
-    public List<Jugador> listarTodos() {
+    public List<Pueblo> listarTodos() {
         EntityManager em = emf.createEntityManager();
-        List<Jugador> lista = em.createQuery("SELECT j FROM Jugador j", Jugador.class).getResultList();
+        List<Pueblo> lista = em.createQuery("SELECT p FROM Pueblo p", Pueblo.class).getResultList();
         em.close();
         return lista;
     }

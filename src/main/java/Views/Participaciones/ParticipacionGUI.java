@@ -2,11 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Interfaz.Participaciones;
+package Views.Participaciones;
 
-import DAO.JugadorDAO;
-import DAO.ParticipacionDAO;
-import DAO.PartidoDAO;
+import Controladores.JugadorDAO;
+import Controladores.ParticipacionDAO;
+import Controladores.PartidoDAO;
 import Entitys.Jugador;
 import Entitys.Participacion;
 import Entitys.Partido;

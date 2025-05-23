@@ -2,23 +2,21 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
-package Interfaz.Jugadores;
+package Views.Pueblos;
 
-import DAO.JugadorDAO;
-import Interfaz.Pueblos.*;
-import DAO.PuebloDAO;
+import Controladores.PuebloDAO;
 import javax.swing.JOptionPane;
 
 /**
  *
  * @author nuria
  */
-public class BorrarJugador extends javax.swing.JDialog {
+public class BorrarPueblos extends javax.swing.JDialog {
 
     /**
      * Creates new form BorrarArbitro
      */
-    public BorrarJugador(java.awt.Frame parent, boolean modal) {
+    public BorrarPueblos(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
@@ -33,17 +31,17 @@ public class BorrarJugador extends javax.swing.JDialog {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        idBorrar = new javax.swing.JTextField();
+        nombreBorrar = new javax.swing.JTextField();
         Borrar = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jLabel1.setText("Introduzca el id del jugador a borrar:");
+        jLabel1.setText("Introduzca el id del pueblo a borrar:");
 
-        idBorrar.addActionListener(new java.awt.event.ActionListener() {
+        nombreBorrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                idBorrarActionPerformed(evt);
+                nombreBorrarActionPerformed(evt);
             }
         });
 
@@ -72,8 +70,8 @@ public class BorrarJugador extends javax.swing.JDialog {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(idBorrar))
-                        .addGap(0, 165, Short.MAX_VALUE))
+                            .addComponent(nombreBorrar))
+                        .addGap(0, 170, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(Borrar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -86,7 +84,7 @@ public class BorrarJugador extends javax.swing.JDialog {
                 .addGap(20, 20, 20)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(idBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(nombreBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Borrar)
@@ -97,24 +95,24 @@ public class BorrarJugador extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void idBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idBorrarActionPerformed
+    private void nombreBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreBorrarActionPerformed
         // TODO add your handling code here:
 
 
-    }//GEN-LAST:event_idBorrarActionPerformed
+    }//GEN-LAST:event_nombreBorrarActionPerformed
 
     private void BorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BorrarActionPerformed
-        String idTexto = idBorrar.getText().trim();
+        String idTexto = nombreBorrar.getText().trim();
 
         if (!idTexto.isEmpty()) {
             try {
                 int id = Integer.parseInt(idTexto);
 
-                JugadorDAO jugadorDAO = new JugadorDAO();
-                int confirm = JOptionPane.showConfirmDialog(this, "¿Estás seguro de que quieres borrar al jugador con ID " + id + "?", "Confirmar borrado", JOptionPane.YES_NO_OPTION);
+                PuebloDAO puebloDAO = new PuebloDAO();
+                int confirm = JOptionPane.showConfirmDialog(this, "¿Estás seguro de que quieres borrar al pueblo con ID " + id + "?", "Confirmar borrado", JOptionPane.YES_NO_OPTION);
                 if (confirm == JOptionPane.YES_OPTION) {
-                    jugadorDAO.eliminar(id);
-                    JOptionPane.showMessageDialog(this, "Jugador borrado correctamente.");
+                    puebloDAO.eliminar(id);
+                    JOptionPane.showMessageDialog(this, "Pueblo borrado correctamente.");
                     dispose();
                 }
 
@@ -135,8 +133,8 @@ dispose();     }//GEN-LAST:event_jButton2ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Borrar;
-    private javax.swing.JTextField idBorrar;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextField nombreBorrar;
     // End of variables declaration//GEN-END:variables
 }

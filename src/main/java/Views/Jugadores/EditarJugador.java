@@ -2,10 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
-package Interfaz.Jugadores;
+package Views.Jugadores;
 
-import DAO.JugadorDAO;
-import DAO.PuebloDAO;
+import Controladores.JugadorDAO;
+import Controladores.PuebloDAO;
 import Entitys.Jugador;
 import Entitys.Pueblo;
 import java.util.List;

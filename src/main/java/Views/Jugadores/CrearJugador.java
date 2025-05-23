@@ -2,27 +2,38 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
-package Interfaz.Pueblos;
+package Views.Jugadores;
 
-import Interfaz.Arbitros.*;
-import DAO.ArbitroDAO;
-import DAO.PuebloDAO;
-import Entitys.Arbitro;
+import Controladores.JugadorDAO;
+import Controladores.PuebloDAO;
+import Entitys.Jugador;
 import Entitys.Pueblo;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
  *
  * @author nuria
  */
-public class CrearPueblo extends javax.swing.JDialog {
+public class CrearJugador extends javax.swing.JDialog {
 
     /**
      * Creates new form CrearArbitro
      */
-    public CrearPueblo(java.awt.Frame parent, boolean modal) {
+    private List<Pueblo> pueblosDisponibles;
+
+    public CrearJugador(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        pueblosDisponibles = new PuebloDAO().listarTodos(); 
+        cargarPueblosEnComboBox();
+    }
+
+    private void cargarPueblosEnComboBox() {
+        puebloJugador.removeAllItems();
+        for (Pueblo p : pueblosDisponibles) {
+            puebloJugador.addItem(p);
+        }
     }
 
     /**
@@ -35,26 +46,22 @@ public class CrearPueblo extends javax.swing.JDialog {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        localidadCrear = new javax.swing.JTextField();
-        CrearArbitro = new javax.swing.JButton();
+        CrearJugador = new javax.swing.JButton();
         Salir = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         nombreCrear = new javax.swing.JTextField();
+        edadCrear = new javax.swing.JSpinner();
+        jLabel3 = new javax.swing.JLabel();
+        puebloJugador = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jLabel1.setText("Nombre del pueblo a crear: ");
+        jLabel1.setText("Nombre del jugador a crear: ");
 
-        localidadCrear.addActionListener(new java.awt.event.ActionListener() {
+        CrearJugador.setText("Crear");
+        CrearJugador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                localidadCrearActionPerformed(evt);
-            }
-        });
-
-        CrearArbitro.setText("Crear");
-        CrearArbitro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CrearArbitroActionPerformed(evt);
+                CrearJugadorActionPerformed(evt);
             }
         });
 
@@ -66,13 +73,15 @@ public class CrearPueblo extends javax.swing.JDialog {
             }
         });
 
-        jLabel2.setText("Localidad del pueblo a crear: ");
+        jLabel2.setText("Edad del jugador a crear: ");
 
         nombreCrear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nombreCrearActionPerformed(evt);
             }
         });
+
+        jLabel3.setText("Pueblo del jugador a crear:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -82,15 +91,12 @@ public class CrearPueblo extends javax.swing.JDialog {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE)
                         .addGap(181, 181, 181))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(localidadCrear)
-                        .addGap(105, 105, 105))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(CrearArbitro)
+                                .addComponent(CrearJugador)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(Salir))
                             .addGroup(layout.createSequentialGroup()
@@ -98,7 +104,13 @@ public class CrearPueblo extends javax.swing.JDialog {
                                     .addComponent(jLabel1)
                                     .addComponent(nombreCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(0, 0, Short.MAX_VALUE)))
-                        .addContainerGap())))
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(puebloJugador, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(edadCrear, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -109,43 +121,56 @@ public class CrearPueblo extends javax.swing.JDialog {
                 .addComponent(nombreCrear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
-                .addComponent(localidadCrear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(64, 64, 64))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(edadCrear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(puebloJugador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Salir)
-                    .addComponent(CrearArbitro))
-                .addContainerGap())
+                    .addComponent(CrearJugador)
+                    .addComponent(Salir))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void localidadCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_localidadCrearActionPerformed
-        // TODO add your handling code here:
+    private void CrearJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearJugadorActionPerformed
+        String nombre = nombreCrear.getText();
+        int edad = (int) edadCrear.getValue();
 
+        Object selectedItem = puebloJugador.getSelectedItem();
 
-    }//GEN-LAST:event_localidadCrearActionPerformed
-
-    private void CrearArbitroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearArbitroActionPerformed
-        // TODO add your handling code here:
-        String nombre = nombreCrear.getText().trim();
-        String localidad = localidadCrear.getText().trim();
-        if (!nombre.isEmpty() && !localidad.isEmpty()) {
-            PuebloDAO puebloDAO = new PuebloDAO();
-            Pueblo nuevoPueblo = new Pueblo();
-            nuevoPueblo.setNombre(nombre);
-            nuevoPueblo.setLocalizacion(localidad);
-            
-            puebloDAO.crear(nuevoPueblo);
-            JOptionPane.showMessageDialog(null, "Pueblo creado correctamente.");
-            dispose(); //Cierra la ventana
-        } else {
-            JOptionPane.showMessageDialog(null, "El nombre o la localidad no pueden estar vacíos.");
+        // validar edad
+        if (edad <= 0) {
+            JOptionPane.showMessageDialog(null, "La edad debe ser mayor que 0.");
+            return;
         }
-    }//GEN-LAST:event_CrearArbitroActionPerformed
+
+        //validar nombre y selección de pueblo
+        if (nombre.isEmpty() || selectedItem == null) {
+            JOptionPane.showMessageDialog(null, "El nombre y el pueblo no pueden estar vacíos.");
+            return;
+        }
+
+        //obtener pueblo seleccionado y su ID
+        Pueblo puebloSeleccionado = (Pueblo) selectedItem;
+        
+
+        JugadorDAO jugadorDAO = new JugadorDAO();
+        Jugador nuevoJugador = new Jugador();
+        nuevoJugador.setNombre(nombre);
+        nuevoJugador.setPueblo(puebloSeleccionado);
+        nuevoJugador.setEdad(edad);
+
+        jugadorDAO.crear(nuevoJugador);
+        JOptionPane.showMessageDialog(null, "Jugador creado correctamente.");
+        dispose(); //Cierra la ventana
+
+
+    }//GEN-LAST:event_CrearJugadorActionPerformed
 
     private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
 dispose();     }//GEN-LAST:event_SalirActionPerformed
@@ -159,11 +184,13 @@ dispose();     }//GEN-LAST:event_SalirActionPerformed
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton CrearArbitro;
+    private javax.swing.JButton CrearJugador;
     private javax.swing.JButton Salir;
+    private javax.swing.JSpinner edadCrear;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField localidadCrear;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField nombreCrear;
+    private javax.swing.JComboBox<Pueblo> puebloJugador;
     // End of variables declaration//GEN-END:variables
 }

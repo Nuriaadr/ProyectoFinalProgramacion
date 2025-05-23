@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package DAO;
+package Controladores;
 
-import Entitys.Pueblo;
+import Entitys.Arbitro;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
@@ -14,46 +14,46 @@ import java.util.List;
  *
  * @author nuria
  */
-public class PuebloDAO {
-    private final EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProyectoFinalProgramacion");
+public class ArbitroDAO {
+     private EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProyectoFinalProgramacion");
 
-    public void crear(Pueblo pueblo) {
+    public void crear(Arbitro arbitro) {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
-        em.persist(pueblo);
+        em.persist(arbitro);
         em.getTransaction().commit();
         em.close();
     }
 
-    public Pueblo leer(int id) {
+    public Arbitro leer(int id) {
         EntityManager em = emf.createEntityManager();
-        Pueblo pueblo = em.find(Pueblo.class, id);
+        Arbitro arbitro = em.find(Arbitro.class, id);
         em.close();
-        return pueblo;
+        return arbitro;
     }
 
-    public void actualizar(Pueblo pueblo) {
+    public void actualizar(Arbitro arbitro) {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
-        em.merge(pueblo);
+        em.merge(arbitro);
         em.getTransaction().commit();
         em.close();
     }
 
     public void eliminar(int id) {
         EntityManager em = emf.createEntityManager();
-        Pueblo pueblo = em.find(Pueblo.class, id);
-        if (pueblo != null) {
+        Arbitro arbitro = em.find(Arbitro.class, id);
+        if (arbitro != null) {
             em.getTransaction().begin();
-            em.remove(pueblo);
+            em.remove(arbitro);
             em.getTransaction().commit();
         }
         em.close();
     }
 
-    public List<Pueblo> listarTodos() {
+    public List<Arbitro> listarTodos() {
         EntityManager em = emf.createEntityManager();
-        List<Pueblo> lista = em.createQuery("SELECT p FROM Pueblo p", Pueblo.class).getResultList();
+        List<Arbitro> lista = em.createQuery("SELECT a FROM Arbitro a", Arbitro.class).getResultList();
         em.close();
         return lista;
     }

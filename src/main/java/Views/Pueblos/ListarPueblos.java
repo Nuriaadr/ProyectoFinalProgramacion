@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
-package Interfaz.Pueblos;
+package Views.Pueblos;
 
-import DAO.PuebloDAO;
+import Controladores.PuebloDAO;
 import Entitys.Arbitro;
 import Entitys.Pueblo;
 import java.util.List;

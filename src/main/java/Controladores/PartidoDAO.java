@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package DAO;
+package Controladores;
 
-import Entitys.Arbitro;
+import Entitys.Partido;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
@@ -14,47 +14,48 @@ import java.util.List;
  *
  * @author nuria
  */
-public class ArbitroDAO {
-     private EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProyectoFinalProgramacion");
+public class PartidoDAO {
+     private final EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProyectoFinalProgramacion");
 
-    public void crear(Arbitro arbitro) {
+    public void crear(Partido partido) {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
-        em.persist(arbitro);
+        em.persist(partido);
         em.getTransaction().commit();
         em.close();
     }
 
-    public Arbitro leer(int id) {
+    public Partido leer(int id) {
         EntityManager em = emf.createEntityManager();
-        Arbitro arbitro = em.find(Arbitro.class, id);
+        Partido partido = em.find(Partido.class, id);
         em.close();
-        return arbitro;
+        return partido;
     }
 
-    public void actualizar(Arbitro arbitro) {
+    public void actualizar(Partido partido) {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
-        em.merge(arbitro);
+        em.merge(partido);
         em.getTransaction().commit();
         em.close();
     }
 
     public void eliminar(int id) {
         EntityManager em = emf.createEntityManager();
-        Arbitro arbitro = em.find(Arbitro.class, id);
-        if (arbitro != null) {
+        Partido partido = em.find(Partido.class, id);
+        if (partido != null) {
             em.getTransaction().begin();
-            em.remove(arbitro);
+            em.remove(partido);
             em.getTransaction().commit();
         }
         em.close();
     }
 
-    public List<Arbitro> listarTodos() {
+    public List<Partido> listarTodos() {
         EntityManager em = emf.createEntityManager();
-        List<Arbitro> lista = em.createQuery("SELECT a FROM Arbitro a", Arbitro.class).getResultList();
+        List<Partido> lista = em.createQuery("SELECT p FROM Partido p", Partido.class).getResultList();
         em.close();
         return lista;
     }
 }
+

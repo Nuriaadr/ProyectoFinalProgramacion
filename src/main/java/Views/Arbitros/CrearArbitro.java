@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
-package Interfaz.Arbitros;
+package Views.Arbitros;
 
-import DAO.ArbitroDAO;
+import Controladores.ArbitroDAO;
 import Entitys.Arbitro;
 import javax.swing.JOptionPane;
 
@@ -12,12 +12,12 @@ import javax.swing.JOptionPane;
  *
  * @author nuria
  */
-public class BorrarArbitro extends javax.swing.JDialog {
+public class CrearArbitro extends javax.swing.JDialog {
 
     /**
-     * Creates new form BorrarArbitro
+     * Creates new form CrearArbitro
      */
-    public BorrarArbitro(java.awt.Frame parent, boolean modal) {
+    public CrearArbitro(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
@@ -32,31 +32,31 @@ public class BorrarArbitro extends javax.swing.JDialog {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        nombreBorrar = new javax.swing.JTextField();
-        Borrar = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        nombreCrear = new javax.swing.JTextField();
+        CrearArbitro = new javax.swing.JButton();
+        Salir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jLabel1.setText("Introduzca el id del árbitro a  borrar:");
+        jLabel1.setText("Nombre del arbitro a crear: ");
 
-        nombreBorrar.addActionListener(new java.awt.event.ActionListener() {
+        nombreCrear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nombreBorrarActionPerformed(evt);
+                nombreCrearActionPerformed(evt);
             }
         });
 
-        Borrar.setText("Borrar");
-        Borrar.addActionListener(new java.awt.event.ActionListener() {
+        CrearArbitro.setText("Crear");
+        CrearArbitro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BorrarActionPerformed(evt);
+                CrearArbitroActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Salir");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        Salir.setText("Salir");
+        Salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                SalirActionPerformed(evt);
             }
         });
 
@@ -70,12 +70,12 @@ public class BorrarArbitro extends javax.swing.JDialog {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(nombreBorrar))
-                        .addGap(0, 167, Short.MAX_VALUE))
+                            .addComponent(nombreCrear))
+                        .addGap(0, 170, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(Borrar)
+                        .addComponent(CrearArbitro)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2)))
+                        .addComponent(Salir)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -84,58 +84,51 @@ public class BorrarArbitro extends javax.swing.JDialog {
                 .addGap(20, 20, 20)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(nombreBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(nombreCrear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Borrar)
-                    .addComponent(jButton2))
-                .addContainerGap(26, Short.MAX_VALUE))
+                    .addComponent(CrearArbitro)
+                    .addComponent(Salir))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void nombreBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreBorrarActionPerformed
+    private void nombreCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreCrearActionPerformed
         // TODO add your handling code here:
 
 
-    }//GEN-LAST:event_nombreBorrarActionPerformed
+    }//GEN-LAST:event_nombreCrearActionPerformed
 
-    private void BorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BorrarActionPerformed
-        String idTexto = nombreBorrar.getText().trim();
+    private void CrearArbitroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearArbitroActionPerformed
+        // TODO add your handling code here:
+        String nombre = nombreCrear.getText().trim();
+        if (!nombre.isEmpty()) {
+            ArbitroDAO arbitroDAO = new ArbitroDAO();
+            Arbitro nuevoArbitro = new Arbitro();
+            nuevoArbitro.setNombre(nombre);
 
-        if (!idTexto.isEmpty()) {
-            try {
-                int id = Integer.parseInt(idTexto);
-
-                ArbitroDAO arbitroDAO = new ArbitroDAO();
-                int confirm = JOptionPane.showConfirmDialog(this, "¿Estás seguro de que quieres borrar al árbitro con ID " + id + "?", "Confirmar borrado", JOptionPane.YES_NO_OPTION);
-                if (confirm == JOptionPane.YES_OPTION) {
-                    arbitroDAO.eliminar(id);
-                    JOptionPane.showMessageDialog(this, "Árbitro borrado correctamente.");
-                    dispose();
-                }
-
-            } catch (NumberFormatException e) {
-                JOptionPane.showMessageDialog(null, "Debe introducir un número entero válido como ID.");
-            }
+            arbitroDAO.crear(nuevoArbitro);
+            JOptionPane.showMessageDialog(null, "Árbitro creado correctamente.");
+            dispose(); //Cierra la ventana
         } else {
-            JOptionPane.showMessageDialog(null, "Por favor, introduzca un ID.");
+            JOptionPane.showMessageDialog(null, "El nombre no puede estar vacío.");
         }
-    }//GEN-LAST:event_BorrarActionPerformed
+    }//GEN-LAST:event_CrearArbitroActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
         System.exit(0);        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_SalirActionPerformed
 
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Borrar;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton CrearArbitro;
+    private javax.swing.JButton Salir;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField nombreBorrar;
+    private javax.swing.JTextField nombreCrear;
     // End of variables declaration//GEN-END:variables
 }

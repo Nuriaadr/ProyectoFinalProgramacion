@@ -2,21 +2,22 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
-package Interfaz.Pueblos;
+package Views.Arbitros;
 
-import DAO.PuebloDAO;
+import Controladores.ArbitroDAO;
+import Entitys.Arbitro;
 import javax.swing.JOptionPane;
 
 /**
  *
  * @author nuria
  */
-public class BorrarPueblos extends javax.swing.JDialog {
+public class BorrarArbitro extends javax.swing.JDialog {
 
     /**
      * Creates new form BorrarArbitro
      */
-    public BorrarPueblos(java.awt.Frame parent, boolean modal) {
+    public BorrarArbitro(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
@@ -37,7 +38,7 @@ public class BorrarPueblos extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jLabel1.setText("Introduzca el id del pueblo a borrar:");
+        jLabel1.setText("Introduzca el id del árbitro a  borrar:");
 
         nombreBorrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -52,7 +53,6 @@ public class BorrarPueblos extends javax.swing.JDialog {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(255, 0, 0));
         jButton2.setText("Salir");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,7 +71,7 @@ public class BorrarPueblos extends javax.swing.JDialog {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(nombreBorrar))
-                        .addGap(0, 170, Short.MAX_VALUE))
+                        .addGap(0, 167, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(Borrar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -108,11 +108,11 @@ public class BorrarPueblos extends javax.swing.JDialog {
             try {
                 int id = Integer.parseInt(idTexto);
 
-                PuebloDAO puebloDAO = new PuebloDAO();
-                int confirm = JOptionPane.showConfirmDialog(this, "¿Estás seguro de que quieres borrar al pueblo con ID " + id + "?", "Confirmar borrado", JOptionPane.YES_NO_OPTION);
+                ArbitroDAO arbitroDAO = new ArbitroDAO();
+                int confirm = JOptionPane.showConfirmDialog(this, "¿Estás seguro de que quieres borrar al árbitro con ID " + id + "?", "Confirmar borrado", JOptionPane.YES_NO_OPTION);
                 if (confirm == JOptionPane.YES_OPTION) {
-                    puebloDAO.eliminar(id);
-                    JOptionPane.showMessageDialog(this, "Pueblo borrado correctamente.");
+                    arbitroDAO.eliminar(id);
+                    JOptionPane.showMessageDialog(this, "Árbitro borrado correctamente.");
                     dispose();
                 }
 
@@ -125,7 +125,8 @@ public class BorrarPueblos extends javax.swing.JDialog {
     }//GEN-LAST:event_BorrarActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-dispose();     }//GEN-LAST:event_jButton2ActionPerformed
+        System.exit(0);        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

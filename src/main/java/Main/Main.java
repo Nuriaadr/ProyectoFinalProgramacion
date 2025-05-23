@@ -3,7 +3,7 @@
  */
 package Main;
 
-import Interfaz.Panel;
+import Views.Panel;
 import javax.swing.JFrame;
 
 /**
