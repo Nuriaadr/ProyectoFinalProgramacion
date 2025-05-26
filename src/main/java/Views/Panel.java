@@ -152,6 +152,8 @@ public class Panel extends javax.swing.JPanel {
 
     private void BotonPartiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonPartiActionPerformed
         // TODO add your handling code here:
+        Views.Partidos.PanelPartidos p = new Views.Partidos.PanelPartidos();
+        p.setVisible(true);
     }//GEN-LAST:event_BotonPartiActionPerformed
 
     private void BotonParticipacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonParticipacionesActionPerformed

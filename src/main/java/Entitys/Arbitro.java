@@ -66,7 +66,7 @@ public class Arbitro {
 
     @Override
     public String toString() {
-        return id + " " + nombre;
+        return nombre;
     }
 
 }

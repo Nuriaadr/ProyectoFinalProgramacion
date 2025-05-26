@@ -122,13 +122,13 @@ public class PanelPartidos extends javax.swing.JFrame {
     private void editarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarActionPerformed
         // TODO add your handling code here:
         
-        EditarJugador editar = new EditarJugador(this, rootPaneCheckingEnabled);
+        EditarPartido editar = new EditarPartido(this, rootPaneCheckingEnabled);
         editar.setVisible(true);
     }//GEN-LAST:event_editarActionPerformed
 
     private void crearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearActionPerformed
         // TODO add your handling code here:
-        CrearJugador crear = new CrearJugador(this, rootPaneCheckingEnabled);
+        CrearPartido crear = new CrearPartido(this, rootPaneCheckingEnabled);
         crear.setVisible(true);
     }//GEN-LAST:event_crearActionPerformed
 
@@ -140,7 +140,7 @@ public class PanelPartidos extends javax.swing.JFrame {
 
     private void listActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listActionPerformed
         // TODO add your handling code here:
-        ListarJugadores listar = new ListarJugadores(this, rootPaneCheckingEnabled);
+        ListarPartidos listar = new ListarPartidos(this, rootPaneCheckingEnabled);
         listar.setVisible(true);
     }//GEN-LAST:event_listActionPerformed
 

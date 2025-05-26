@@ -109,10 +109,10 @@ public class BorrarPartidos extends javax.swing.JDialog {
                 int id = Integer.parseInt(idTexto);
 
                 PartidoDAO partidoDAO = new PartidoDAO();
-                int confirm = JOptionPane.showConfirmDialog(this, "¿Estás seguro de que quieres borrar al jugador con ID " + id + "?", "Confirmar borrado", JOptionPane.YES_NO_OPTION);
+                int confirm = JOptionPane.showConfirmDialog(this, "¿Estás seguro de que quieres borrar el partido con ID " + id + "?", "Confirmar borrado", JOptionPane.YES_NO_OPTION);
                 if (confirm == JOptionPane.YES_OPTION) {
                     partidoDAO.eliminar(id);
-                    JOptionPane.showMessageDialog(this, "Jugador borrado correctamente.");
+                    JOptionPane.showMessageDialog(this, "Partido borrado correctamente.");
                     dispose();
                 }
 

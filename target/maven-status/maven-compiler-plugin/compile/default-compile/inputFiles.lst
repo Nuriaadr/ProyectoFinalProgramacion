@@ -1,11 +1,14 @@
 /home/nuria/NetBeansProjects/ProyectoFinalProgramacion/src/main/java/Controladores/PartidoDAO.java
+/home/nuria/NetBeansProjects/ProyectoFinalProgramacion/src/main/java/Views/Partidos/EditarPartido.java
 /home/nuria/NetBeansProjects/ProyectoFinalProgramacion/src/main/java/Controladores/PuebloDAO.java
+/home/nuria/NetBeansProjects/ProyectoFinalProgramacion/src/main/java/Views/Partidos/PanelPartidos.java
 /home/nuria/NetBeansProjects/ProyectoFinalProgramacion/src/main/java/Entitys/Participacion.java
 /home/nuria/NetBeansProjects/ProyectoFinalProgramacion/src/main/java/Controladores/ParticipacionDAO.java
 /home/nuria/NetBeansProjects/ProyectoFinalProgramacion/src/main/java/Views/Pueblos/CrearPueblo.java
-/home/nuria/NetBeansProjects/ProyectoFinalProgramacion/src/main/java/Views/Partidos/PartidoGUI.java
+/home/nuria/NetBeansProjects/ProyectoFinalProgramacion/src/main/java/Views/Partidos/ListarPartidos.java
 /home/nuria/NetBeansProjects/ProyectoFinalProgramacion/src/main/java/Entitys/Pueblo.java
 /home/nuria/NetBeansProjects/ProyectoFinalProgramacion/src/main/java/Views/Arbitros/BorrarArbitro.java
+/home/nuria/NetBeansProjects/ProyectoFinalProgramacion/src/main/java/Views/Participaciones/PanelParticipaciones.java
 /home/nuria/NetBeansProjects/ProyectoFinalProgramacion/src/main/java/Views/Participaciones/ParticipacionGUI.java
 /home/nuria/NetBeansProjects/ProyectoFinalProgramacion/src/main/java/Entitys/Partido.java
 /home/nuria/NetBeansProjects/ProyectoFinalProgramacion/src/main/java/Entitys/Arbitro.java
@@ -15,9 +18,11 @@
 /home/nuria/NetBeansProjects/ProyectoFinalProgramacion/src/main/java/Views/Jugadores/BorrarJugador.java
 /home/nuria/NetBeansProjects/ProyectoFinalProgramacion/src/main/java/Views/Panel.java
 /home/nuria/NetBeansProjects/ProyectoFinalProgramacion/src/main/java/Views/Jugadores/EditarJugador.java
+/home/nuria/NetBeansProjects/ProyectoFinalProgramacion/src/main/java/Views/Partidos/CrearPartido.java
 /home/nuria/NetBeansProjects/ProyectoFinalProgramacion/src/main/java/Views/Pueblos/BorrarPueblos.java
 /home/nuria/NetBeansProjects/ProyectoFinalProgramacion/src/main/java/Views/Jugadores/ListarJugadores.java
 /home/nuria/NetBeansProjects/ProyectoFinalProgramacion/src/main/java/Views/Arbitros/EditarArb.java
+/home/nuria/NetBeansProjects/ProyectoFinalProgramacion/src/main/java/Views/Partidos/BorrarPartidos.java
 /home/nuria/NetBeansProjects/ProyectoFinalProgramacion/src/main/java/Views/Arbitros/CrearArbitro.java
 /home/nuria/NetBeansProjects/ProyectoFinalProgramacion/src/main/java/Views/Arbitros/PanelArbitro.java
 /home/nuria/NetBeansProjects/ProyectoFinalProgramacion/src/main/java/Views/Pueblos/EditarPueblo.java

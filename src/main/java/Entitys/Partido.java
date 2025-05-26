@@ -35,15 +35,14 @@ public class Partido {
     @JoinColumn(name = "id_arbitro", unique = true)
     private Arbitro arbitro;
 
-    @OneToMany(mappedBy = "partido")
-    private List<Participacion> participaciones;
+ 
 
-    public Partido(Date fecha, String lugar, Arbitro arbitro, List<Participacion> participaciones) {
+    public Partido(Date fecha, String lugar, Arbitro arbitro) {
 
         this.fecha = fecha;
         this.lugar = lugar;
         this.arbitro = arbitro;
-        this.participaciones = new ArrayList();
+       
     }
 
     public Partido() {
@@ -81,17 +80,10 @@ public class Partido {
         this.arbitro = arbitro;
     }
 
-    public List<Participacion> getParticipaciones() {
-        return participaciones;
-    }
-
-    public void setParticipaciones(List<Participacion> participaciones) {
-        this.participaciones = participaciones;
-    }
-
+   
     @Override
     public String toString() {
-        return "Partido{" + "id=" + id + ", fecha=" + fecha + ", lugar=" + lugar + ", arbitro=" + arbitro + ", participaciones=" + participaciones + '}';
+        return "Partido:" + " Fecha=" + fecha + ", lugar=" + lugar + ", arbitro=" + arbitro;
     }
 
 }
