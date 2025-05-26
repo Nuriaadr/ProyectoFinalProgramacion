@@ -13,6 +13,7 @@ Views/Partidos/EditarPartido$2.class
 Views/Panel$6.class
 Views/Partidos/BorrarPartidos$3.class
 Views/Pueblos/PanelPueblo$2.class
+Views/Participaciones/CrearParticipacion$1.class
 Views/Jugadores/BorrarJugador$2.class
 Views/Arbitros/BorrarArbitro$3.class
 Controladores/ArbitroDAO.class
@@ -25,15 +26,18 @@ Views/Partidos/CrearPartido$3.class
 Views/Pueblos/PanelPueblo$4.class
 Views/Jugadores/PanelJugador$3.class
 Controladores/PartidoDAO.class
+Views/Participaciones/EditarParticipacion$3.class
 Views/Partidos/BorrarPartidos.class
 Views/Participaciones/PanelParticipaciones$5.class
 Views/Pueblos/CrearPueblo$3.class
 Views/Jugadores/PanelJugador$1.class
 Views/Participaciones/PanelParticipaciones$2.class
+Views/Participaciones/ListarParticipaciones.class
 Views/Jugadores/BorrarJugador$1.class
 Views/Partidos/ListarPartidos$1.class
 Views/Pueblos/ListarPueblos.class
 Views/Arbitros/PanelArbitro$5.class
+Views/Participaciones/EditarParticipacion$1.class
 Views/Jugadores/ListarJugadores$1.class
 Controladores/ParticipacionDAO.class
 Views/Arbitros/ListarArbitros$1.class
@@ -48,6 +52,8 @@ Views/Partidos/PanelPartidos$5.class
 Views/Participaciones/PanelParticipaciones$3.class
 Views/Jugadores/CrearJugador$3.class
 Controladores/PuebloDAO.class
+Views/Participaciones/EditarParticipacion$2.class
+Views/Participaciones/CrearParticipacion.class
 Views/Jugadores/PanelJugador$2.class
 Entitys/Partido.class
 Views/Arbitros/BorrarArbitro$1.class
@@ -58,6 +64,7 @@ Views/Arbitros/CrearArbitro$1.class
 Views/Panel.class
 Views/Jugadores/EditarJugador$2.class
 Views/Partidos/CrearPartido$1.class
+Views/Participaciones/ListarParticipaciones$1.class
 Views/Partidos/PanelPartidos.class
 Views/Pueblos/EditarPueblo$5.class
 Views/Arbitros/BorrarArbitro$2.class
@@ -69,8 +76,10 @@ Views/Arbitros/PanelArbitro$4.class
 Views/Participaciones/PanelParticipaciones$1.class
 Views/Jugadores/CrearJugador$1.class
 Views/Jugadores/EditarJugador$1.class
+Views/Participaciones/BorrarParticipaciones$3.class
 Views/Panel$2.class
 Views/Arbitros/CrearArbitro$3.class
+Views/Participaciones/EditarParticipacion.class
 Views/Jugadores/EditarJugador$3.class
 Views/Arbitros/EditarArb$3.class
 Views/Partidos/BorrarPartidos$2.class
@@ -80,6 +89,7 @@ Views/Arbitros/PanelArbitro$1.class
 Entitys/Participacion.class
 Views/Jugadores/BorrarJugador$3.class
 Views/Pueblos/BorrarPueblos$2.class
+Views/Participaciones/BorrarParticipaciones.class
 Views/Partidos/EditarPartido$3.class
 Views/Panel$5.class
 Views/Partidos/PanelPartidos$3.class
@@ -88,8 +98,10 @@ Views/Pueblos/PanelPueblo$1.class
 Views/Arbitros/EditarArb$4.class
 Views/Partidos/EditarPartido.class
 Views/Pueblos/PanelPueblo.class
+Views/Participaciones/CrearParticipacion$3.class
 Views/Partidos/BorrarPartidos$1.class
 Controladores/JugadorDAO.class
+Views/Participaciones/BorrarParticipaciones$2.class
 Views/Jugadores/EditarJugador$4.class
 Views/Pueblos/CrearPueblo.class
 Views/Partidos/PanelPartidos$2.class
@@ -100,10 +112,12 @@ Views/Pueblos/PanelPueblo$5.class
 Views/Pueblos/ListarPueblos$1.class
 Views/Jugadores/PanelJugador$4.class
 Entitys/Jugador.class
+Views/Participaciones/EditarParticipacion$4.class
 Views/Arbitros/ListarArbitros.class
-Views/Participaciones/ParticipacionGUI.class
+Views/Participaciones/CrearParticipacion$2.class
 Views/Jugadores/EditarJugador.class
 Views/Pueblos/CrearPueblo$4.class
+Views/Participaciones/BorrarParticipaciones$1.class
 Views/Partidos/EditarPartido$1.class
 Entitys/Arbitro.class
 Views/Jugadores/CrearJugador.class

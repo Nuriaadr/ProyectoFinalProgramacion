@@ -121,26 +121,25 @@ public class PanelParticipaciones extends javax.swing.JFrame {
 
     private void editarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarActionPerformed
         // TODO add your handling code here:
-        
-        EditarJugador editar = new EditarJugador(this, rootPaneCheckingEnabled);
+        EditarParticipacion editar = new EditarParticipacion(this, rootPaneCheckingEnabled);
         editar.setVisible(true);
     }//GEN-LAST:event_editarActionPerformed
 
     private void crearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearActionPerformed
         // TODO add your handling code here:
-        CrearJugador crear = new CrearJugador(this, rootPaneCheckingEnabled);
+        CrearParticipacion crear = new CrearParticipacion(this, rootPaneCheckingEnabled);
         crear.setVisible(true);
     }//GEN-LAST:event_crearActionPerformed
 
     private void borrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrarActionPerformed
         // TODO add your handling code here:
-        BorrarJugador borrar = new BorrarJugador(this, rootPaneCheckingEnabled);
+        BorrarParticipaciones borrar = new BorrarParticipaciones(this, rootPaneCheckingEnabled);
         borrar.setVisible(true);
     }//GEN-LAST:event_borrarActionPerformed
 
     private void listActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listActionPerformed
         // TODO add your handling code here:
-        ListarJugadores listar = new ListarJugadores(this, rootPaneCheckingEnabled);
+        ListarParticipaciones listar = new ListarParticipaciones(this, rootPaneCheckingEnabled);
         listar.setVisible(true);
     }//GEN-LAST:event_listActionPerformed
 

@@ -35,14 +35,12 @@ public class Partido {
     @JoinColumn(name = "id_arbitro", unique = true)
     private Arbitro arbitro;
 
- 
-
     public Partido(Date fecha, String lugar, Arbitro arbitro) {
 
         this.fecha = fecha;
         this.lugar = lugar;
         this.arbitro = arbitro;
-       
+
     }
 
     public Partido() {
@@ -80,7 +78,6 @@ public class Partido {
         this.arbitro = arbitro;
     }
 
-   
     @Override
     public String toString() {
         return "Partido:" + " Fecha=" + fecha + ", lugar=" + lugar + ", arbitro=" + arbitro;

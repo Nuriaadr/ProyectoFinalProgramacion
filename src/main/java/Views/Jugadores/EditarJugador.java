@@ -10,6 +10,7 @@ import Entitys.Jugador;
 import Entitys.Pueblo;
 import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.SpinnerNumberModel;
 
 /**
  *
@@ -54,7 +55,7 @@ public class EditarJugador extends javax.swing.JDialog {
         editar = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         nombre = new javax.swing.JTextField();
-        edad = new javax.swing.JSpinner();
+        edad = new javax.swing.JSpinner(new SpinnerNumberModel(0, 0, Integer.MAX_VALUE, 1));
         jLabel4 = new javax.swing.JLabel();
         puebloJugador = new javax.swing.JComboBox<>();
         salir = new javax.swing.JButton();

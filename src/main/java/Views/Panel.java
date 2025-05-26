@@ -5,6 +5,7 @@
 package Views;
 
 import Views.Arbitros.PanelArbitro;
+import Views.Participaciones.PanelParticipaciones;
 
 /**
  *
@@ -158,6 +159,8 @@ public class Panel extends javax.swing.JPanel {
 
     private void BotonParticipacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonParticipacionesActionPerformed
         // TODO add your handling code here:
+        Views.Participaciones.PanelParticipaciones p = new Views.Participaciones.PanelParticipaciones();
+        p.setVisible(true);
     }//GEN-LAST:event_BotonParticipacionesActionPerformed
 
     private void BotonJugadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonJugadoresActionPerformed
